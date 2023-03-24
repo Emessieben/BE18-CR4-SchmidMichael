@@ -1,6 +1,7 @@
 <?php
   require "actions/db_connect.php";
 
+  // get id from url and looking for match in database
   $id = $_GET["id"];
   $sql = "SELECT * FROM library WHERE id= $id";
   $result = mysqli_query($connect ,$sql);
@@ -14,8 +15,9 @@
     $statusAvailableOrReservedColor .= "text-danger";
   }
 
+  // bootstrap card with content
   $html = "
-  <div class='container'>
+  <div class='container  mt-5 pt-5'>
   
     <div class='card mx-auto p-3 m-5' style='width: 50rem;'>
       <div class='card-body row'>

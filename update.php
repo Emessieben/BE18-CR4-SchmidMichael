@@ -1,6 +1,7 @@
 <?php
   require "actions/db_connect.php";
 
+  // take the data from database on the basis of id
   $id = $_GET["id"];
   $sql = "SELECT * FROM library WHERE id = $id";
   $result = mysqli_query($connect ,$sql);
@@ -19,10 +20,12 @@
     $publish_date = $_POST["publish_date"];
     $status = $_POST["status"];
 
+    // UPDATE the data in Database
     $sqlUpdate = "UPDATE `library` SET `title`='$title',`image`='$image',`ISBN`='$isbn',`short_description`='$description',
     `type`='$type',`author_first_name`='$author_first_name',`author_last_name`='$author_last_name',`publisher_name`='$publisher_name',`publisher_address`='$publisher_address',
     `publish_date`='$publish_date',`status`='$status' WHERE id = $id";
 
+    // alert a message for Success/Error
     if(mysqli_query($connect, $sqlUpdate)){
       $message = "Successfully CREATED";
       echo "<script type='text/javascript'>alert('$message');</script>";
@@ -31,12 +34,6 @@
       echo "<script type='text/javascript'>alert('$message');</script>";
     }
   }
-
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +49,7 @@
 <body>
 <?php require "navbar.php" ?>
 
-  <div class="container">
+  <div class="container mt-5 pt-5">
     <h1>Update</h1>
 
       <form method="POST" enctype="multipart/form-data">

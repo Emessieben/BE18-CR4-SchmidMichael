@@ -5,18 +5,19 @@
   $result = mysqli_query($connect ,$sql);
   $tbody=''; // holds the content for the table to print in body
 
-  if(mysqli_num_rows($result)  > 0) {     
+  // if there is content in databse
+  if(mysqli_num_rows($result)  > 0) {  
+    // loop through database and print for each one row   
       while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){         
           $tbody .= "  
           <tr>
             <th scope='row'>" . $row['id']. "</th>
-            <td><img class='img-thumbnail w-50' src='" . $row['image'] ."'</td>
+            <td class='w-25'><img class='img-thumbnail w-25' src='" . $row['image'] ."'</td>
             <td>" . $row['title'] . "</td>
             <td>" . $row['author_first_name'] . " " . $row['author_last_name'] . "</td>
             <td>" . $row['publisher_name'] . "</td>
-            <td>" . $row['publish_date'] . "</td>
             <td><a href='details.php?id=" .$row['id']."'><button class='btn btn-success btn-sm' type='button'>Details</button></a></td>
-            <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Update</button></a></td>
+            <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-warning btn-sm' type='button'>Edit</button></a></td>
             <td><a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
           </tr>";
       };
@@ -39,18 +40,17 @@
 </head>
   <body>
     <?php require "navbar.php" ?>
-    <div class="container">
-      <table class="table">
+    <div class="container mt-5 pt-5">
+      <table class="table table-hover border">
         <thead>
-          <tr>
+          <tr class="bg-primary text-white">
             <th scope="col">ID</th>
             <th scope="col">Image</th>
             <th scope="col">Title</th>
             <th scope="col">Author</th>
             <th scope="col">Publisher</th>
-            <th scope="col">Publish Date</th>
             <th scope="col">Details</th>
-            <th scope="col">Update</th>
+            <th scope="col">Edit</th>
             <th scope="col">Delete</th>
           </tr>
         </thead>

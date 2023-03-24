@@ -1,14 +1,8 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- Navbar for all sites (home, create, update) -->
+<nav class="navbar fixed-top bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
+    <a class="btn btn-light me-2" href="index.php" type="button">Home</a>
     <a class="navbar-brand" href="index.php"><i class="bi bi-book-fill"></i> Library</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="index.php">Home</a>
-        <a class="nav-link" href="create.php">Create</a>
-      </div>
-    </div>
+    <a class="btn btn-outline-light" href="create.php" type="button"><i class="bi bi-plus-square"></i> Create Entry</a>
   </div>
 </nav>
