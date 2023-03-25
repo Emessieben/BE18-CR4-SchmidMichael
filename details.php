@@ -36,7 +36,9 @@
         </div>
       </div>
       <div class='card-body mx-auto'>
-        <a href='index.php' class='btn btn-dark'>Go Back</a>
+        <a href='index.php' class='btn btn-dark mx-5'>Home</a>
+        <a href='update.php?id=" .$row['id']."'><button class='btn btn-warning btn mx-5' type='button'>Edit</button></a>
+        <td><a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn mx-5' type='button'>Delete</button></a></td>
       </div>
     </div>
   </div>
