@@ -154,7 +154,7 @@ if (isset($_POST["submit"])) {
       <div class="row mb-3">
         <label for="publish_date" class="col-sm-2 col-form-label">Publish Date</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="publish_date" value="<?= $toUpdate["publish_date"] ?>" required>
+          <input type="date" class="form-control" name="publish_date" value="<?= $toUpdate["publish_date"] ?>" required>
         </div>
       </div>
       <fieldset class="row mb-3">

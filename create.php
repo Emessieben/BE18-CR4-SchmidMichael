@@ -26,11 +26,10 @@ if (isset($_POST["submit"])) {
     $message = "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
     <script>Swal.fire(
       'Successfully created!',
-      'You created a new entry!',
+      '',
       'success'
     )</script>";
   } else {
-    echo "hello";
     header("location: error.php");
   }
 }
@@ -130,7 +129,7 @@ if (isset($_POST["submit"])) {
       <div class="row mb-3">
         <label for="publish_date" class="col-sm-2 col-form-label">Publish Date</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="publish_date" required>
+          <input type="date" class="form-control" name="publish_date" required>
         </div>
       </div>
       <fieldset class="row mb-3">
